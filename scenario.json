@@ -1,0 +1,37 @@
+{
+  "scenario_id": "step-functions-alternative.demo.v1",
+  "title": "Step Functions alternative - order fulfillment workflow",
+  "description": "Workflow processor handles order fulfillment via SSE stream delivery. No Step Functions state machine, no JSON workflow definition, no AWS lock-in. One intent with durable delivery built in.",
+
+  "agents": [
+    {
+      "role": "workflow_processor",
+      "address": "stepfn-alt-processor-demo",
+      "display_name": "Workflow Processor Agent",
+      "delivery_mode": "stream",
+      "create_if_missing": true
+    }
+  ],
+
+  "workflow": {
+    "steps": [
+      {
+        "step_id": "process_workflow",
+        "tool_id": "tool.agent.task.v1",
+        "assigned_to": "workflow_processor",
+        "step_deadline_seconds": 120
+      }
+    ]
+  },
+
+  "intent": {
+    "type": "intent.workflow.process.v1",
+    "payload": {
+      "workflow_id": "WF-2026-0073",
+      "workflow_type": "order_fulfillment",
+      "steps": ["validate_payment", "reserve_inventory", "schedule_shipping", "send_confirmation"],
+      "order_id": "ORD-2026-99821"
+    },
+    "max_delivery_attempts": 3
+  }
+}
