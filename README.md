@@ -1,7 +1,5 @@
 # Step Functions Alternative - Python
 
-AXME is a coordination infrastructure for durable execution of long-running intents across distributed systems.
-
 Step Functions gives you workflow orchestration on AWS. But you pay with JSON state machine definitions, AWS lock-in, and Lambda coupling. Need to add a human approval step? Build a custom callback pattern. Need agents from different services? Build cross-account IAM. AXME replaces the JSON state machine with a simple Python API and works anywhere.
 
 > **Alpha** - Built with [AXME](https://github.com/AxmeAI/axme) (AXP Intent Protocol).
