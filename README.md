@@ -3,7 +3,7 @@
 Step Functions gives you workflow orchestration on AWS. But you pay with JSON state machine definitions, AWS lock-in, and Lambda coupling. Need to add a human approval step? Build a custom callback pattern. Need agents from different services? Build cross-account IAM. AXME replaces the JSON state machine with a simple Python API and works anywhere.
 
 > **Alpha** - Built with [AXME](https://github.com/AxmeAI/axme) (AXP Intent Protocol).
-> [cloud.axme.ai](https://cloud.axme.ai) - [hello@axme.ai](mailto:hello@axme.ai)
+> [cloud.axme.ai](https://cloud.axme.ai) - [contact@axme.ai](mailto:contact@axme.ai)
 
 ---
 
